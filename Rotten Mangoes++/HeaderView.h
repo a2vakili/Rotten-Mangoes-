@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  HeaderView.h
 //  Rotten Mangoes++
 //
 //  Created by Arsalan Vakili on 2015-08-24.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface HeaderView : UICollectionReusableView
+@property (weak, nonatomic) IBOutlet UIImageView *movieImageView;
 
 @end
-
