@@ -19,6 +19,9 @@
 		B678CE651B8B99E4001B9B56 /* ReviewCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B678CE641B8B99E4001B9B56 /* ReviewCollectionViewController.m */; };
 		B678CE681B8BB009001B9B56 /* ReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B678CE671B8BB009001B9B56 /* ReviewCell.m */; };
 		B678CE6B1B8BD5F7001B9B56 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B678CE6A1B8BD5F7001B9B56 /* HeaderView.m */; };
+		B678CE6E1B8CC950001B9B56 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B678CE6D1B8CC950001B9B56 /* MapViewController.m */; };
+		B678CE701B8CE56B001B9B56 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B678CE6F1B8CE56B001B9B56 /* MapKit.framework */; };
+		B678CE731B8CE73F001B9B56 /* Theatre.m in Sources */ = {isa = PBXBuildFile; fileRef = B678CE721B8CE73F001B9B56 /* Theatre.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,12 @@
 		B678CE671B8BB009001B9B56 /* ReviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewCell.m; sourceTree = "<group>"; };
 		B678CE691B8BD5F7001B9B56 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
 		B678CE6A1B8BD5F7001B9B56 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
+		B678CE6C1B8CC94F001B9B56 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		B678CE6D1B8CC950001B9B56 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		B678CE6F1B8CE56B001B9B56 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B678CE711B8CE73F001B9B56 /* Theatre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Theatre.h; sourceTree = "<group>"; };
+		B678CE721B8CE73F001B9B56 /* Theatre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Theatre.m; sourceTree = "<group>"; };
+		B678CE751B8D1AF2001B9B56 /* LighthouseLabs.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LighthouseLabs.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B678CE701B8CE56B001B9B56 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +88,7 @@
 		B678CE281B8B73E0001B9B56 = {
 			isa = PBXGroup;
 			children = (
+				B678CE6F1B8CE56B001B9B56 /* MapKit.framework */,
 				B678CE331B8B73E0001B9B56 /* Rotten Mangoes++ */,
 				B678CE4D1B8B73E0001B9B56 /* Rotten Mangoes++Tests */,
 				B678CE321B8B73E0001B9B56 /* Products */,
@@ -100,7 +111,12 @@
 				B678CE391B8B73E0001B9B56 /* AppDelegate.m */,
 				B678CE5A1B8B75B4001B9B56 /* MovieCollectionViewController.h */,
 				B678CE5B1B8B75B4001B9B56 /* MovieCollectionViewController.m */,
+				B678CE711B8CE73F001B9B56 /* Theatre.h */,
+				B678CE721B8CE73F001B9B56 /* Theatre.m */,
+				B678CE751B8D1AF2001B9B56 /* LighthouseLabs.gpx */,
 				B678CE691B8BD5F7001B9B56 /* HeaderView.h */,
+				B678CE6C1B8CC94F001B9B56 /* MapViewController.h */,
+				B678CE6D1B8CC950001B9B56 /* MapViewController.m */,
 				B678CE6A1B8BD5F7001B9B56 /* HeaderView.m */,
 				B678CE661B8BB009001B9B56 /* ReviewCell.h */,
 				B678CE671B8BB009001B9B56 /* ReviewCell.m */,
@@ -247,7 +263,9 @@
 				B678CE3A1B8B73E0001B9B56 /* AppDelegate.m in Sources */,
 				B678CE621B8B7F21001B9B56 /* MovieCell.m in Sources */,
 				B678CE371B8B73E0001B9B56 /* main.m in Sources */,
+				B678CE6E1B8CC950001B9B56 /* MapViewController.m in Sources */,
 				B678CE6B1B8BD5F7001B9B56 /* HeaderView.m in Sources */,
+				B678CE731B8CE73F001B9B56 /* Theatre.m in Sources */,
 				B678CE5F1B8B7BD4001B9B56 /* Movie.m in Sources */,
 				B678CE651B8B99E4001B9B56 /* ReviewCollectionViewController.m in Sources */,
 				B678CE5C1B8B75B4001B9B56 /* MovieCollectionViewController.m in Sources */,
@@ -446,6 +464,7 @@
 				B678CE561B8B73E0001B9B56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B678CE571B8B73E0001B9B56 /* Build configuration list for PBXNativeTarget "Rotten Mangoes++Tests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +473,7 @@
 				B678CE591B8B73E0001B9B56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

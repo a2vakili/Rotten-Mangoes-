@@ -10,6 +10,7 @@
 #import "Movie.h"
 #import "ReviewCell.h"
 #import "HeaderView.h"
+#import "MapViewController.h"
 
 @interface ReviewCollectionViewController ()
 
@@ -25,14 +26,12 @@ static NSString * const reuseIdentifier = @"ReviewCell";
     [super viewDidLoad];
     
     NSURL *url = [NSURL URLWithString:self.movie.reviews];
-    NSLog(@"%@",self.movie.reviews);
     
     NSURLSessionDataTask *task = [[NSURLSession sharedSession]dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         NSError *jsonError;
         
         NSDictionary *reviews = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-        NSLog(@"%@",reviews);
         
         if (!reviews) {
             NSLog(@"There was an error %@",jsonError);
@@ -93,12 +92,37 @@ static NSString * const reuseIdentifier = @"ReviewCell";
     return cell;
 }
 
--(void)collectionView:(UICollectionView *)collectionView willDisplaySupplementaryView:(UICollectionReusableView *)view forElementKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath{
-    
+
+
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     HeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header" forIndexPath:indexPath];
-    headerView.movieImageView.image = [UIImage imageNamed:self.movie.thumbnailString];
+    
+    dispatch_async(dispatch_get_global_queue(0,0), ^{
+        NSData *data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:self.movie.thumbnailString]];
+        if ( data == nil )
+            return;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // WARNING: is the cell still using the same data by this point??
+            UIImage *image = [UIImage imageWithData: data];
+            headerView.movieImageView.image = image;
+        });
+    });
+    
+    return headerView;
+}
+
+
+- (IBAction)showMap:(id)sender {
+    MapViewController *mapViewController = [[MapViewController alloc]init];
+    
+    mapViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"showMap"];
+    mapViewController.movie = self.movie;
+ 
+    [self.navigationController pushViewController:mapViewController animated:YES];
+ //  [self performSegueWithIdentifier:@"showMap" sender:sender];
     
 }
+
 
 #pragma mark <UICollectionViewDelegate>
 
